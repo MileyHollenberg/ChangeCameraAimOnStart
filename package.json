@@ -1,7 +1,7 @@
 
 {
     "name" : "io.megamiley.change-camera-aim-on-start",
-    "version" : "1.1.0",
+    "version" : "1.1.1",
     "displayName" : "Change Camera Aim On Start",
     "description" : "Toolbar button that allows you to start your project at the same position as the scene view",
     "unity"       : "2018.1",
