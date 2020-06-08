@@ -14,6 +14,14 @@ Ever wanted to start your game from the scene views position instead of the came
 ## OpenUPM
 * Run `openupm add io.megamiley.change-camera-aim-on-start` inside your project folder
 
+# Move your character instead of the camera
+
+If you want to play your game from where you are in the scene view by having your character object be moved to that location you can enable this in your `Project Settings -> Camera Aim on Start` 
+
+![Settings](settings.png)
+
+Ensure that your player object has the tag `Player` and you should be good to go
+
 # Tested version
 
 This extension has only been tested with 2019.3 so far but should work just fine with 2019.X and 2020.X. If you run into any problems please open an issue.
