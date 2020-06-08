@@ -7,8 +7,12 @@ Ever wanted to start your game from the scene views position instead of the came
 
 # Setup
 
+## Custom
 * Install https://github.com/marijnz/unity-toolbar-extender through [github directly into your project](https://docs.unity3d.com/Manual/upm-ui-giturl.html)
 * Add `git@github.com:MileyHollenberg/ChangeCameraAimOnStart.git` through the same method as well
+
+## OpenUPM
+* Run `openupm add io.megamiley.change-camera-aim-on-start` inside your project folder
 
 # Tested version
 
