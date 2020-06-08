@@ -64,22 +64,31 @@ namespace MegaTools.Editor.Toolbar
                 return;
             }
 
-            Transform camTransform = Camera.main.transform;
+            Transform targetTransform = Camera.main.transform;
+            bool isPlayer = false;
+            if (EditorPrefs.GetBool(CameraAimSettings.USE_PLAYER_OBJECT) && GameObject.FindGameObjectWithTag("Player") is GameObject playerObj)
+            {
+                targetTransform = playerObj.transform;
+                isPlayer = true;
+            }
 
             if (IsEnabled && obj == PlayModeStateChange.ExitingEditMode)
             {
                 Transform sceneCamTransform = SceneView.lastActiveSceneView.camera.transform;
+                
+                _previousPosition = targetTransform.position;
+                if (!isPlayer)
+                    _previousRotation = targetTransform.rotation;
 
-                _previousPosition = camTransform.position;
-                _previousRotation = camTransform.rotation;
-
-                camTransform.position = sceneCamTransform.position;
-                camTransform.rotation = sceneCamTransform.rotation;
+                targetTransform.position = sceneCamTransform.position;
+                if (!isPlayer)
+                    targetTransform.rotation = sceneCamTransform.rotation;
             }
             else if (IsEnabled && obj == PlayModeStateChange.EnteredEditMode)
             {
-                camTransform.position = _previousPosition;
-                camTransform.rotation = _previousRotation;
+                targetTransform.position = _previousPosition;
+                if (!isPlayer)
+                    targetTransform.rotation = _previousRotation;
             }
         }
 
@@ -93,7 +102,7 @@ namespace MegaTools.Editor.Toolbar
                 : CameraAimToolbarStyles.commandButtonStyleDisabled;
             const string tooltip =
                 "Start your project at the current scene view position or keep the camera object position";
-            
+
             if (GUILayout.Button(new GUIContent(focusText, tooltip), style))
             {
                 SetEnabled(!IsEnabled);
