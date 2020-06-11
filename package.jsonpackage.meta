@@ -9,7 +9,7 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 305d72b64a2242c0b6ff1d70a6bc89f4, type: 3}
   name: io.megamiley.change-camera-aim-on-start
-  version: 1.1.1
+  version: 1.1.2
   displayName: Change Camera Aim On Start
   description: Toolbar button that allows you to start your project at the same position
     as the scene view
@@ -18,7 +18,7 @@ ScriptedImporter:
   dependencies:
     keyValuePairs:
     - key: com.marijnzwemmer.unity-toolbar-extender
-      value: https://github.com/marijnz/unity-toolbar-extender.git
+      value: 1.2.0
   keywords:
   - toolbar
   - extension
